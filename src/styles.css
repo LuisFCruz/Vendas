@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+
+.field {
+    padding-right: 5px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+}
+
+.field label,
+.field-group label {
+    margin: .5rem 0 0;
+    width: 100%;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+    padding-right: 5px;
+}
+
+select {
+    height: 30px;
+}
+
+
+.btn {
+    border-radius: inherit;
+    margin-bottom: .5rem;
+}
+
+.nav-tabs .nav-link {
+    background: #e8e8e8;
+    margin-left: 5px;
+    border-radius: inherit;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.tab-pane {
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    padding: 1rem;
+}
+

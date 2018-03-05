@@ -1,5 +1,6 @@
 
 export class EnderecoModel {
+    id: number;
     logradouro: string;
     numero: string;
     complemento: string;

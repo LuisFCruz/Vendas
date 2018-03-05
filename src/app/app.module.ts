@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { VendaComponent } from './venda/venda.component';
 import { PessoaComponent } from './pessoa/pessoa.component';
 import { EnderecoComponent } from './endereco/endereco.component';
+import { ListagemEnderecoComponent } from './listagem-endereco/listagem-endereco.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { EnderecoComponent } from './endereco/endereco.component';
     AppComponent,
     VendaComponent,
     PessoaComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    ListagemEnderecoComponent
   ],
   imports: [
     BrowserModule,

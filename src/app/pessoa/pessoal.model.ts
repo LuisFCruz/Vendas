@@ -1,6 +1,7 @@
 import { EnderecoModel } from "../endereco/endereco.model";
 
 export class PessoaModel {
+	id: number;
 	nome: string;
 	tipoPessoa: number;
 	cpfCnpj: string;

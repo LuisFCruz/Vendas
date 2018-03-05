@@ -1,12 +1,26 @@
-<ngb-tabset>
-  <ngb-tab title="Cadastro">
-    <ng-template ngbTabContent>
-      <pessoa></pessoa>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Endereço">
-    <ng-template ngbTabContent>
-      Endereço
-    </ng-template>
-  </ngb-tab>
-</ngb-tabset>
+
+<section class="venda-container">
+  <div class="">
+    <label class="col-1">Código</label>
+    <input type="text">
+  </div>
+  
+  <ngb-tabset>
+    <ngb-tab title="Cadastro">
+      <ng-template ngbTabContent>
+        <pessoa></pessoa>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Endereço">
+      <ng-template ngbTabContent>
+        <listagem-endereco></listagem-endereco>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+
+  <div>
+    <button class="btn btn-primary">Salvar</button>
+    <button class="btn btn-secondary">Desistir</button>
+    <button class="btn btn-secondary">Apagar</button>  
+  </div>
+</section>
