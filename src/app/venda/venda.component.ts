@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PessoaModel } from '../pessoa/pessoal.model';
+import { PessoaModel } from '../pessoa/pessoa.model';
 import { EnderecoModel } from '../endereco/endereco.model';
 
 @Component({
@@ -17,7 +17,6 @@ export class VendaComponent implements OnInit {
   }
 
   adicionarEndereco(endereco: EnderecoModel) {
-    console.log(endereco);
     this.pessoa.addEndereco(endereco);
   }
 

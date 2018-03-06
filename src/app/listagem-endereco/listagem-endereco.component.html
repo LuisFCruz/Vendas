@@ -15,6 +15,15 @@
           <th>Cidade</th>
         </tr>
       </thead>
+      <tbody>
+        <tr *ngFor="let endereco of enderecos">
+          <td>{{endereco.logradouro}}</td>
+          <td>{{endereco.numero}}</td>
+          <td>{{endereco.cep}}</td>
+          <td>{{endereco.bairro}}</td>
+          <td>{{endereco.cidade}}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </section>

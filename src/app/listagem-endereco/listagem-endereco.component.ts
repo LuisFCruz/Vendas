@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { EnderecoModel } from '../endereco/endereco.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
@@ -10,7 +10,7 @@ import { ModalComponent } from './modal/modal.component';
 })
 export class ListagemEnderecoComponent implements OnInit {
 
-  enderecos: EnderecoModel[];
+  @Input() enderecos: EnderecoModel[];
   @Output() adicionar = new EventEmitter<EnderecoModel>();
 
   constructor(private _modalService: NgbModal) { }
@@ -22,7 +22,6 @@ export class ListagemEnderecoComponent implements OnInit {
     const modalRef = this._modalService.open(ModalComponent);
     modalRef.componentInstance.titulo = 'Endereço';
     modalRef.result.then((endereco:EnderecoModel) => {
-      console.log(endereco);
       this.salvarEndereco(endereco);
     }, (reason) => {});
   }
