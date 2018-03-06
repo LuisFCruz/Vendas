@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PessoaModel } from '../pessoa/pessoal.model';
+import { EnderecoModel } from '../endereco/endereco.model';
 
 @Component({
   selector: 'venda',
@@ -8,11 +9,16 @@ import { PessoaModel } from '../pessoa/pessoal.model';
 })
 export class VendaComponent implements OnInit {
 
-  pessoa: PessoaModel;
+  pessoa: PessoaModel = new PessoaModel();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  adicionarEndereco(endereco: EnderecoModel) {
+    console.log(endereco);
+    this.pessoa.addEndereco(endereco);
   }
 
 }

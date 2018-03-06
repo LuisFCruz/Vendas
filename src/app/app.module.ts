@@ -8,8 +8,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { VendaComponent } from './venda/venda.component';
 import { PessoaComponent } from './pessoa/pessoa.component';
-import { EnderecoComponent } from './endereco/endereco.component';
 import { ListagemEnderecoComponent } from './listagem-endereco/listagem-endereco.component';
+import { ListagemEnderecoModule } from './listagem-endereco/listagem-endereco.module';
+import { EnderecoModule } from './endereco/endereco.module';
 
 
 @NgModule({
@@ -17,12 +18,12 @@ import { ListagemEnderecoComponent } from './listagem-endereco/listagem-endereco
     AppComponent,
     VendaComponent,
     PessoaComponent,
-    EnderecoComponent,
-    ListagemEnderecoComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ListagemEnderecoModule,
+    EnderecoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

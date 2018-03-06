@@ -47,3 +47,7 @@ select {
     padding: 1rem;
 }
 
+.modal-dialog {
+    max-width: 800px;
+}
+

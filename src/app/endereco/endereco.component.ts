@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { EnderecoModel } from './endereco.model';
 
 @Component({
   selector: 'endereco',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./endereco.component.css']
 })
 export class EnderecoComponent implements OnInit {
+
+  @Input() endereco: EnderecoModel;
 
   constructor() { }
 

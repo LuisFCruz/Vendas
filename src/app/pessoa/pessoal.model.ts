@@ -19,5 +19,17 @@ export class PessoaModel {
 	fones: string[];
 	email: string;
 
-	enderecos: EnderecoModel[];
+	_enderecos: EnderecoModel[] = new Array<EnderecoModel>();
+
+	get enderecos():EnderecoModel[] {
+		return [].concat(...this._enderecos);
+	}
+
+	set enderecos(value: EnderecoModel[]) {
+		this._enderecos = value;
+	}
+
+	addEndereco(value: EnderecoModel) {
+		this._enderecos.push(value);
+	}
 }
