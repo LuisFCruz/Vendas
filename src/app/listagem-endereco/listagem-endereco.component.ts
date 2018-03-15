@@ -21,12 +21,12 @@ export class ListagemEnderecoComponent implements OnInit {
   open() {
     const modalRef = this._modalService.open(ModalComponent);
     modalRef.componentInstance.titulo = 'Endereço';
-    modalRef.result.then((endereco:EnderecoModel) => {
+    modalRef.result.then((endereco: EnderecoModel) => {
       this.salvarEndereco(endereco);
     }, (reason) => {});
   }
 
-  salvarEndereco(endereco: EnderecoModel){
+  salvarEndereco(endereco: EnderecoModel) {
     this.adicionar.emit(endereco);
   }
 }

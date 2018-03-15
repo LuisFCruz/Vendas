@@ -14,7 +14,7 @@ export class ModalComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
-    this.endereco.bairro = "Teste";
+    this.endereco.bairro = 'Teste';
   }
 
 }

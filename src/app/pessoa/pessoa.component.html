@@ -1,33 +1,33 @@
 <div class="pessoa-container">
-  <form>
+  <form [formGroup]="formularioPessoa">
     <div class="field">
       <label for="">Nome</label>
-      <input type="text">
+      <input type="text" formControlName="nome">
     </div>
 
     <div class="d-flex">
       <div class="flex-1 field">
         <label for="">Tipo Pessoa</label>
-        <select>
+        <select formControlName="tipoPessoa">
           <option></option>
-          <option>Pessoa Física</option>
-          <option>Pessoa Jurídica</option>
+          <option value="0">Pessoa Física</option>
+          <option value="1">Pessoa Jurídica</option>
         </select>
       </div>
 
       <div class="flex-1 field">
         <label for="">CPF/CNPJ</label>
-        <input type="text">
+        <input type="text" formControlName="cpfCnpj">
       </div>
 
       <div class="flex-1 field">
         <label for="">RG</label>
-        <input type="text">
+        <input type="text" formControlName="rg">
       </div>
 
       <div class="field flex-1">
         <label for="">Sexo</label>
-        <select>
+        <select formControlName="sexo">
           <option value=""></option>
           <option value="F">Feminino</option>
           <option value="M">Masculino</option>
@@ -38,18 +38,18 @@
 
     <div class="field">
       <label for="">Nome Fantasia</label>
-      <input type="text">
+      <input type="text" formControlName="nomeFantasia">
     </div>
 
     <div class="d-flex">
       <div class="field">
         <label for="">Tipo de Contribuinte</label>
-        <select></select>
+        <select formControlName="tipoContribuinte"></select>
       </div>
 
       <div class="field">
         <label for="">Inscrição Estadual</label>
-        <input type="text">
+        <input type="text" formControlName="inscricaoEstadual">
       </div>
     </div>
 
@@ -57,54 +57,47 @@
 
       <div class="field flex-1">
         <label for="">Data Nascimento</label>
-        <input type="text">
+        <input type="text" formControlName="dataNascimento">
       </div>
 
       <div class="field flex-1">
         <label for="">CNH</label>
-        <input type="text">
+        <input type="text" formControlName="cnh">
       </div>
 
       <div class="field flex-1">
         <label for="">Estado Civil</label>
-        <select></select>
+        <select formControlName="estadoCivil"></select>
       </div>
 
       <div class="field flex-1">
         <label for="">Grau Instrução</label>
-        <input type="text">
+        <input type="text" formControlName="grauInstrucao">
       </div>
     </div>
 
     <div class="field flex-1">
       <label for="">Profissão</label>
-      <input type="text">
+      <input type="text" formControlName="profissao">
     </div>
 
     <div class="field flex-1">
       <label for="">Naturalidade</label>
-      <input type="text">
+      <input type="text" formControlName="naturalidade">
     </div>
 
     <div class="field-group d-flex flex-wrap">
       <label for="">Fones</label>
-      <div class="field flex-1">
-          <input type="text">
-      </div>
-      <div class="field flex-1">
-          <input type="text">
-      </div>
-      <div class="field flex-1">
-          <input type="text">
-      </div>
-      <div class="field flex-1">
-        <input type="text">
+      <div formArrayName="fones" *ngFor="let item of formularioPessoa.get('fones').controls; let i = index;">
+        <div class="field flex-1" [formGroupName]="i">
+            <input type="text" formControlName="fone">
+        </div>
       </div>
     </div>
 
     <div class="field">
       <label for="">E-mail</label>
-      <input type="text">
+      <input type="text" formControlName="email">
     </div>
 
   </form>

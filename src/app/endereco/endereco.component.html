@@ -1,44 +1,48 @@
 <div>
-  <form action="">
+  <form [formGroup]="formulario" (ngSubmit)="salvarEndereco()">
     <fieldset>
         <div class="d-flex field-group">
           <div class="field flex-1">
             <label for="logradouro">Logradouro</label>
-            <input type="text" [(ngModel)]="endereco.logradouro" name="logradouro" id="logradouro">
+            <input type="text" formControlName="logradouro" name="logradouro" id="logradouro">
           </div>
     
           <div class="field">
             <label for="numero">Nº</label>
-            <input type="text" [(ngModel)]="endereco.numero" name="numero" id="numero">
+            <input type="text" formControlName="numero" name="numero" id="numero">
           </div>
         </div>
 
       <div class="field">
         <label for="complemento">Complemento</label>
-        <input type="text" [(ngModel)]="endereco.complemento" name="complemento" id="complemento">
+        <input type="text" formControlName="complemento" name="complemento" id="complemento">
       </div>
 
       <div class="field">
         <label for="referencia">Referência</label>
-        <input type="text" [(ngModel)]="endereco.referencia" name="referencia" id="referencia">
+        <input type="text" formControlName="referencia" name="referencia" id="referencia">
       </div>
 
       <div class="field-group d-flex">
         <div class="field">
           <label for="cep">CEP</label>
-          <input type="text"  [(ngModel)]="endereco.cep" name="cep" id="cep">
+          <input type="text"  formControlName="cep" name="cep" id="cep">
         </div>
   
         <div class="field flex-1">
           <label for="bairro">Bairro</label>
-          <input type="text" [(ngModel)]="endereco.bairro" name="bairro" id="bairro">
+          <input type="text" formControlName="bairro" name="bairro" id="bairro">
         </div>
       </div>
 
       <div class="field">
           <label for="cidade">Cidade</label>
-          <input type="text" [(ngModel)]="endereco.cidade" name="cidade" id="cidade">
+          <input type="text" formControlName="cidade" name="cidade" id="cidade">
         </div>
     </fieldset>
+    <div class="d-flex justify-content-center mt-1">
+      <input type="submit" value="Salvar" class="btn btn-secondary">
+      <input type="reset" value="Cancelar" (click)="resetar()" class="btn btn-secondary ml-1">
+    </div>
   </form>
 </div>

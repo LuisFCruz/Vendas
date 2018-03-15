@@ -1,12 +1,12 @@
 <div class="modal-header">
   <h4 class="modal-title">{{titulo}}</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+  <!-- <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
     <span aria-hidden="true">&times;</span>
-  </button>
+  </button> -->
 </div>
 <div class="modal-body">
-  <endereco [endereco]="endereco"></endereco>
+  <endereco [endereco]="endereco" (salvar)="activeModal.close($event)" (cancelar)="activeModal.dismiss()"></endereco>
 </div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(endereco)">Salvar</button>
-</div>
+<!-- <div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="">Salvar</button>
+</div> -->
