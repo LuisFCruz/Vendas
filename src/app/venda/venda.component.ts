@@ -9,7 +9,7 @@ import { EnderecoModel } from '../endereco/endereco.model';
 })
 export class VendaComponent implements OnInit {
 
-  pessoa: PessoaModel = new PessoaModel();
+  pessoa = new PessoaModel();
 
   constructor() { }
 
@@ -20,4 +20,10 @@ export class VendaComponent implements OnInit {
     this.pessoa.addEndereco(endereco);
   }
 
+  pessoaChange(atributo: object) {
+    let keys = Object.keys(atributo);
+    let key = keys[0];
+    this.pessoa[key] = atributo[key];
+    console.log(this.pessoa);
+  }
 }

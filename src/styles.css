@@ -51,3 +51,7 @@ select {
     max-width: 800px;
 }
 
+.ng-invalid.ng-touched:not(form) {
+    border: 1px solid #ff7575;
+}
+

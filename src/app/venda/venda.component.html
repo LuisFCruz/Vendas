@@ -8,7 +8,7 @@
   <ngb-tabset>
     <ngb-tab title="Cadastro">
       <ng-template ngbTabContent>
-        <pessoa></pessoa>
+        <pessoa [ente]="pessoa" (enteChange)="pessoaChange($event)"></pessoa>
       </ng-template>
     </ngb-tab>
     <ngb-tab title="Endereço">

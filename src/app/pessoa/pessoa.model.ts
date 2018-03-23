@@ -11,17 +11,25 @@ export class PessoaModel {
   tipoContribuinte: number;
   inscricaoEstadual: string;
   dataNascimento: string;
-  cnh: string;
+  numeroCNH: string;
   estadoCivil: string;
   grauInstrucao: number;
   profissao: string;
   naturalidade: string;
-  fones: string[];
+  telefone1: string;
+  telefone2: string;
+  telefone3: string;
+  telefone4: string;
   email: string;
-
+  
   _enderecos: EnderecoModel[] = new Array<EnderecoModel>();
 
   get enderecos(): EnderecoModel[] {
+    /*
+     * Cria uma copia do array da entidade, assegurando que 
+     * somente esta classe pode fazer alterações aplicadas no array
+     * que será enviado.
+     */
     return [].concat(...this._enderecos);
   }
 

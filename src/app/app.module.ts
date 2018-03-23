@@ -21,7 +21,7 @@ import { VendaModule } from './venda/venda.module';
     EnderecoModule,
     VendaModule
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

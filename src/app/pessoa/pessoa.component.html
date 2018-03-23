@@ -2,13 +2,13 @@
   <form [formGroup]="formularioPessoa">
     <div class="field">
       <label for="">Nome</label>
-      <input type="text" formControlName="nome">
+      <input type="text" formControlName="nome" (change)="onChange('nome')">
     </div>
 
     <div class="d-flex">
       <div class="flex-1 field">
         <label for="">Tipo Pessoa</label>
-        <select formControlName="tipoPessoa">
+        <select formControlName="tipoPessoa" (change)="onChange('tipoPessoa')">
           <option></option>
           <option value="0">Pessoa Física</option>
           <option value="1">Pessoa Jurídica</option>
@@ -17,17 +17,17 @@
 
       <div class="flex-1 field">
         <label for="">CPF/CNPJ</label>
-        <input type="text" formControlName="cpfCnpj">
+        <input type="text" formControlName="cpfCnpj" (change)="onChange('cpfCnpj')">
       </div>
 
       <div class="flex-1 field">
         <label for="">RG</label>
-        <input type="text" formControlName="rg">
+        <input type="text" formControlName="rg" (change)="onChange('rg')">
       </div>
 
       <div class="field flex-1">
         <label for="">Sexo</label>
-        <select formControlName="sexo">
+        <select formControlName="sexo" (change)="onChange('sexo')">
           <option value=""></option>
           <option value="F">Feminino</option>
           <option value="M">Masculino</option>
@@ -38,18 +38,18 @@
 
     <div class="field">
       <label for="">Nome Fantasia</label>
-      <input type="text" formControlName="nomeFantasia">
+      <input type="text" formControlName="nomeFantasia" (change)="onChange('nomeFantasia')">
     </div>
 
     <div class="d-flex">
       <div class="field">
         <label for="">Tipo de Contribuinte</label>
-        <select formControlName="tipoContribuinte"></select>
+        <select formControlName="tipoContribuinte" (change)="onChange('tipoContribuinte')"></select>
       </div>
 
       <div class="field">
         <label for="">Inscrição Estadual</label>
-        <input type="text" formControlName="inscricaoEstadual">
+        <input type="text" formControlName="inscricaoEstadual" (change)="onChange('inscricaoEstadual')">
       </div>
     </div>
 
@@ -57,47 +57,54 @@
 
       <div class="field flex-1">
         <label for="">Data Nascimento</label>
-        <input type="text" formControlName="dataNascimento">
+        <input type="text" formControlName="dataNascimento" (change)="onChange('dataNascimento')">
       </div>
 
       <div class="field flex-1">
-        <label for="">CNH</label>
-        <input type="text" formControlName="cnh">
+        <label for="numeroCNH">CNH</label>
+        <input type="text" formControlName="numeroCNH" id="numeroCNH" (change)="onChange('numeroCNH')">
       </div>
 
       <div class="field flex-1">
         <label for="">Estado Civil</label>
-        <select formControlName="estadoCivil"></select>
+        <select formControlName="estadoCivil" (change)="onChange('estadoCivil')"></select>
       </div>
 
       <div class="field flex-1">
         <label for="">Grau Instrução</label>
-        <input type="text" formControlName="grauInstrucao">
+        <input type="text" formControlName="grauInstrucao" (change)="onChange('grauInstrucao')">
       </div>
     </div>
 
     <div class="field flex-1">
       <label for="">Profissão</label>
-      <input type="text" formControlName="profissao">
+      <input type="text" formControlName="profissao" (change)="onChange('profissao')">
     </div>
 
     <div class="field flex-1">
       <label for="">Naturalidade</label>
-      <input type="text" formControlName="naturalidade">
+      <input type="text" formControlName="naturalidade" (change)="onChange('naturalidade')">
     </div>
 
     <div class="field-group d-flex flex-wrap">
       <label for="">Fones</label>
-      <div formArrayName="fones" *ngFor="let item of formularioPessoa.get('fones').controls; let i = index;">
-        <div class="field flex-1" [formGroupName]="i">
-            <input type="text" formControlName="fone">
-        </div>
+      <div class="field flex-1">
+        <input type="text" formControlName="telefone1" (change)="onChange('telefone1')">
+      </div>
+      <div class="field flex-1">
+        <input type="text" formControlName="telefone2" (change)="onChange('telefone2')">
+      </div>
+      <div class="field flex-1">
+        <input type="text" formControlName="telefone3" (change)="onChange('telefone3')">
+      </div>
+      <div class="field flex-1">
+        <input type="text" formControlName="telefone4" (change)="onChange('telefone4')">
       </div>
     </div>
 
     <div class="field">
       <label for="">E-mail</label>
-      <input type="text" formControlName="email">
+      <input type="text" formControlName="email" (change)="onChange('email')">
     </div>
 
   </form>
