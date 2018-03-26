@@ -13,7 +13,7 @@
     </ngb-tab>
     <ngb-tab title="Endereço">
       <ng-template ngbTabContent>
-        <listagem-endereco (adicionar)="adicionarEndereco($event)" [enderecos]="pessoa.enderecos"></listagem-endereco>
+        <listagem-endereco [enderecos]="pessoa.enderecos" (adicionar)="adicionarEndereco($event)" (excluir)="excluirEndereco($event)"></listagem-endereco>
       </ng-template>
     </ngb-tab>
   </ngb-tabset>

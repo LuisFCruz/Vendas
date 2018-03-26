@@ -1,29 +1,39 @@
 <section class="d-flex">
   <div class="d-flex flex-column">
-    <button class="btn btn-secondary" (click)="open()" >(F10)Inserir</button>
-    <button class="btn btn-secondary">(F11)Alterar</button>
-    <button class="btn btn-secondary">(F12)Excluir</button>
+    <button class="btn btn-secondary" (click)="open()">(F10)Inserir</button>
+    <button class="btn btn-secondary" [disabled]="!enderecoSelecionado?.id">(F11)Alterar</button>
+    <button class="btn btn-secondary" (click)="excluirEndereco()" [disabled]="!enderecoSelecionado" >(F12)Excluir</button>
   </div>
   <div class="table-responsive pl-5">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Logradouro</th>
-          <th>Nº</th>
-          <th>CEP</th>
-          <th>Bairro</th>
-          <th>Cidade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let endereco of enderecos">
-          <td>{{endereco.logradouro}}</td>
-          <td>{{endereco.numero}}</td>
-          <td>{{endereco.cep}}</td>
-          <td>{{endereco.bairro}}</td>
-          <td>{{endereco.cidade}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <mat-table #table [dataSource]="tableDataSource">
+
+    <ng-container matColumnDef="logradouro">
+        <mat-header-cell *matHeaderCellDef> Logradouro </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.logradouro}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="numero">
+        <mat-header-cell *matHeaderCellDef> Número </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.numero}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="cep">
+        <mat-header-cell *matHeaderCellDef> CEP </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.cep}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="bairro">
+        <mat-header-cell *matHeaderCellDef> Bairro </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.bairro}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="cidade">
+          <mat-header-cell *matHeaderCellDef> Cidade </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.cidade}} </mat-cell>
+        </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectionarLinha(row)" [ngClass]="{ 'selected': estaSelecionada(row) }" ></mat-row>
+    </mat-table>
   </div>
 </section>

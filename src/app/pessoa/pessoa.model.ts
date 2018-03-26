@@ -40,4 +40,8 @@ export class PessoaModel {
   addEndereco(value: EnderecoModel) {
     this._enderecos.push(value);
   }
+
+  removerEndereco(key: number) {
+    this._enderecos.splice(key, 1);
+  }
 }

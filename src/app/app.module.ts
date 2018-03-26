@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ListagemEnderecoModule } from './listagem-endereco/listagem-endereco.module';
 import { EnderecoModule } from './endereco/endereco.module';
 import { VendaModule } from './venda/venda.module';
+import { FormService } from './shared/form.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { VendaModule } from './venda/venda.module';
     EnderecoModule,
     VendaModule
   ],
-  providers: [ ],
+  providers: [ FormService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

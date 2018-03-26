@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { EnderecoModel } from './endereco.model';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormService } from '../shared/form.service';
 
 @Component({
   selector: 'endereco',
@@ -15,23 +16,35 @@ export class EnderecoComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _formService: FormService
+  ) { }
 
+  /**
+   * Primeira função que vai ser execultada ao contruir o componente.
+   * 
+   * O ClienteEnderecoId é bom que seja padronizado para id para que o componente seja 
+   * aproveitado em outras telas.
+   */
   ngOnInit() {
     this.formulario = this._formBuilder.group({
       id: [null],
-      logradouro: [null],
-      numero: [null],
-      complemento: [null],
+      logradouro: [null, [ Validators.required ]],
+      numero: [null, [ Validators.required ]],
+      complemento: [null, [ Validators.required ]],
       referencia: [null],
-      cep: [null],
-      bairro: [null],
-      cidade: [null]
+      cep: [null, [ Validators.required ]],
+      bairro: [null, [ Validators.required ]],
+      cidade: [null, [ Validators.required ]]
     });
   }
 
   salvarEndereco() {
-    this.salvar.emit(this.formulario.value);
+    if (this.formulario.valid)
+      this.salvar.emit(this.formulario.value);
+    else 
+      this._formService.checarValidacao(this.formulario);
   }
 
   resetar() {

@@ -20,6 +20,11 @@ export class VendaComponent implements OnInit {
     this.pessoa.addEndereco(endereco);
   }
 
+  excluirEndereco(endereco: EnderecoModel) {
+    const index = this.pessoa.enderecos.indexOf(endereco);
+    this.pessoa.removerEndereco(index);
+  }
+
   pessoaChange(atributo: object) {
     let keys = Object.keys(atributo);
     let key = keys[0];
